@@ -247,7 +247,7 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
-Cell["Tocatta", "Subsection"],
+Cell["Toccata", "Subsection"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1306,7 +1306,7 @@ Cell[28701, 986, 443, 16, 169, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[29181, 1007, 195, 7, 59, "Input"],
-Cell[29379, 1016, 439, 16, 181, "Output"]
+Cell[29379, 1016, 439, 16, 218, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[29855, 1037, 248, 8, 59, "Input"],
@@ -1322,7 +1322,7 @@ Cell[31997, 1123, 896, 33, 328, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[32930, 1161, 188, 6, 59, "Input"],
-Cell[33121, 1169, 304, 10, 152, "Output"]
+Cell[33121, 1169, 304, 10, 115, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -1333,4 +1333,4 @@ Cell[33121, 1169, 304, 10, 152, "Output"]
 
 (* End of internal cache information *)
 
-(* NotebookSignature yx0wVtswGwp4CBw2DGrce9Do *)
+(* NotebookSignature 3vTp@03iQ4Mt3B1pA6FWzrpR *)
