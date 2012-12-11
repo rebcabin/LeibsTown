@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1063,         20]
-NotebookDataLength[     40695,       1456]
-NotebookOptionsPosition[     36873,       1307]
-NotebookOutlinePosition[     37394,       1325]
-CellTagsIndexPosition[     37351,       1322]
+NotebookDataLength[     40775,       1458]
+NotebookOptionsPosition[     36952,       1309]
+NotebookOutlinePosition[     37473,       1327]
+CellTagsIndexPosition[     37430,       1324]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -716,9 +716,11 @@ Cell[CellGroupData[{
 
 Cell["Fugue", "Subsection"],
 
-Cell["\<\
-All rules -- no function notation.\
-\>", "Text"],
+Cell[TextData[{
+ "All rules -- no function notation (except in the argument to ",
+ StyleBox["FixedPointList", "Input"],
+ ")."
+}], "Text"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1410,63 +1412,63 @@ Cell[20233, 707, 122, 3, 58, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[20404, 716, 27, 0, 47, "Subsection"],
-Cell[20434, 718, 58, 2, 45, "Text"],
-Cell[20495, 722, 6663, 177, 901, "Input"],
-Cell[27161, 901, 75, 0, 45, "Text"],
+Cell[20434, 718, 137, 4, 46, "Text"],
+Cell[20574, 724, 6663, 177, 901, "Input"],
+Cell[27240, 903, 75, 0, 45, "Text"],
 Cell[CellGroupData[{
-Cell[27261, 905, 149, 5, 59, "Input"],
-Cell[27413, 912, 111, 4, 58, "Output"]
+Cell[27340, 907, 149, 5, 59, "Input"],
+Cell[27492, 914, 111, 4, 58, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27561, 921, 195, 7, 59, "Input"],
-Cell[27759, 930, 414, 15, 150, "Output"]
+Cell[27640, 923, 195, 7, 59, "Input"],
+Cell[27838, 932, 414, 15, 150, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28210, 950, 197, 7, 59, "Input"],
-Cell[28410, 959, 443, 16, 150, "Output"]
+Cell[28289, 952, 197, 7, 59, "Input"],
+Cell[28489, 961, 443, 16, 150, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28890, 980, 196, 7, 59, "Input"],
-Cell[29089, 989, 442, 16, 150, "Output"]
+Cell[28969, 982, 196, 7, 59, "Input"],
+Cell[29168, 991, 442, 16, 150, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29568, 1010, 197, 7, 59, "Input"],
-Cell[29768, 1019, 443, 16, 150, "Output"]
+Cell[29647, 1012, 197, 7, 59, "Input"],
+Cell[29847, 1021, 443, 16, 150, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30248, 1040, 197, 7, 59, "Input"],
-Cell[30448, 1049, 443, 16, 150, "Output"]
+Cell[30327, 1042, 197, 7, 59, "Input"],
+Cell[30527, 1051, 443, 16, 150, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30928, 1070, 195, 7, 59, "Input"],
-Cell[31126, 1079, 439, 16, 162, "Output"]
+Cell[31007, 1072, 195, 7, 59, "Input"],
+Cell[31205, 1081, 439, 16, 162, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31602, 1100, 248, 8, 59, "Input"],
-Cell[31853, 1110, 811, 28, 258, "Output"]
+Cell[31681, 1102, 248, 8, 59, "Input"],
+Cell[31932, 1112, 811, 28, 258, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32701, 1143, 206, 7, 59, "Input"],
-Cell[32910, 1152, 531, 19, 177, "Output"]
+Cell[32780, 1145, 206, 7, 59, "Input"],
+Cell[32989, 1154, 531, 19, 177, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33478, 1176, 263, 8, 59, "Input"],
-Cell[33744, 1186, 896, 33, 309, "Output"]
+Cell[33557, 1178, 263, 8, 59, "Input"],
+Cell[33823, 1188, 896, 33, 309, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34677, 1224, 188, 6, 59, "Input"],
-Cell[34868, 1232, 336, 11, 96, "Output"]
+Cell[34756, 1226, 188, 6, 59, "Input"],
+Cell[34947, 1234, 336, 11, 96, "Output"]
 }, Open  ]],
-Cell[35219, 1246, 59, 2, 45, "Text"],
+Cell[35298, 1248, 59, 2, 45, "Text"],
 Cell[CellGroupData[{
-Cell[35303, 1252, 186, 7, 59, "Input"],
-Cell[35492, 1261, 441, 9, 35, "Message"],
-Cell[35936, 1272, 122, 3, 58, "Output"]
+Cell[35382, 1254, 186, 7, 59, "Input"],
+Cell[35571, 1263, 441, 9, 35, "Message"],
+Cell[36015, 1274, 122, 3, 58, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[36095, 1280, 157, 5, 59, "Input"],
-Cell[36255, 1287, 441, 9, 35, "Message"],
-Cell[36699, 1298, 122, 3, 58, "Output"]
+Cell[36174, 1282, 157, 5, 59, "Input"],
+Cell[36334, 1289, 441, 9, 35, "Message"],
+Cell[36778, 1300, 122, 3, 58, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -1477,4 +1479,4 @@ Cell[36699, 1298, 122, 3, 58, "Output"]
 
 (* End of internal cache information *)
 
-(* NotebookSignature OupLwlcWCklooCwyI#N70VVS *)
+(* NotebookSignature OuT4#SOW5Af32A10UB0iqMsX *)
