@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1063,         20]
-NotebookDataLength[     36333,       1306]
-NotebookOptionsPosition[     33207,       1179]
-NotebookOutlinePosition[     33728,       1197]
-CellTagsIndexPosition[     33685,       1194]
+NotebookDataLength[     40600,       1453]
+NotebookOptionsPosition[     36777,       1304]
+NotebookOutlinePosition[     37298,       1322]
+CellTagsIndexPosition[     37255,       1319]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -236,16 +236,28 @@ Cell[BoxData[{
   RowBox[{"topR", "=", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"top_", ",", "rest___"}], "}"}], "\[RuleDelayed]", "top"}], 
-    "}"}]}], ";"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"top_", ",", "___"}], "}"}], "\[RuleDelayed]", "top"}], ",", 
+     RowBox[{
+      RowBox[{"{", "}"}], "\[RuleDelayed]", 
+      RowBox[{"Throw", "[", "\"\<topR: empty stack\>\"", "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"nextR", "=", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"top_", ",", "next_", ",", "rest___"}], "}"}], "\[RuleDelayed]",
-      "next"}], "}"}]}], ";"}]}], "Input"],
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"top_", ",", "next_", ",", "___"}], "}"}], "\[RuleDelayed]", 
+      "next"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"{", "a_", "}"}], "|", 
+        RowBox[{"{", "}"}]}], ")"}], "\[RuleDelayed]", 
+      RowBox[{"Throw", "[", "\"\<nextR: deficient stack\>\"", "]"}]}]}], 
+    "}"}]}], ";"}]}], "Input"],
 
 Cell[CellGroupData[{
 
@@ -639,6 +651,61 @@ Cell[BoxData[
    GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Grid"]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Expect exceptions from the next two\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"execAllTrace", "[", 
+  RowBox[{
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "plus"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Throw", "::", "nocatch"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Uncaught \[NoBreak]\\!\\(Throw[\\\"nextR: deficient \
+stack\\\"]\\)\[NoBreak] returned to top level. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Throw/nocatch\\\", ButtonNote -> \
+\\\"Throw::nocatch\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Throw", "[", "\<\"nextR: deficient stack\"\>", "]"}], 
+  "]"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"execAllTrace", "[", 
+  RowBox[{
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "plus", "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Throw", "::", "nocatch"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Uncaught \[NoBreak]\\!\\(Throw[\\\"nextR: deficient \
+stack\\\"]\\)\[NoBreak] returned to top level. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Throw/nocatch\\\", ButtonNote -> \
+\\\"Throw::nocatch\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Throw", "[", "\<\"nextR: deficient stack\"\>", "]"}], 
+  "]"}]], "Output"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1172,6 +1239,64 @@ Cell[BoxData[
    GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Grid"]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Expect exceptions from the next two\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "plus"}], "}"}]}], "}"}], "/.", 
+  "execAllTrace2"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Throw", "::", "nocatch"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Uncaught \[NoBreak]\\!\\(Throw[\\\"nextR: deficient \
+stack\\\"]\\)\[NoBreak] returned to top level. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Throw/nocatch\\\", ButtonNote -> \
+\\\"Throw::nocatch\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Throw", "[", "\<\"nextR: deficient stack\"\>", "]"}], 
+  "]"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", "plus", "}"}]}], "}"}], "/.", "execAllTrace2"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Throw", "::", "nocatch"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Uncaught \[NoBreak]\\!\\(Throw[\\\"nextR: deficient \
+stack\\\"]\\)\[NoBreak] returned to top level. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Throw/nocatch\\\", ButtonNote -> \
+\\\"Throw::nocatch\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Throw", "[", "\<\"nextR: deficient stack\"\>", "]"}], 
+  "]"}]], "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -1235,88 +1360,110 @@ Cell[4447, 163, 44, 0, 73, "Section"],
 Cell[CellGroupData[{
 Cell[4516, 167, 47, 0, 73, "Section"],
 Cell[4566, 169, 56, 2, 45, "Text"],
-Cell[4625, 173, 2249, 74, 321, "Input"],
+Cell[4625, 173, 2635, 86, 325, "Input"],
 Cell[CellGroupData[{
-Cell[6899, 251, 29, 0, 47, "Subsection"],
-Cell[6931, 253, 5820, 159, 872, "Input"],
-Cell[12754, 414, 75, 0, 45, "Text"],
+Cell[7285, 263, 29, 0, 47, "Subsection"],
+Cell[7317, 265, 5820, 159, 872, "Input"],
+Cell[13140, 426, 75, 0, 45, "Text"],
 Cell[CellGroupData[{
-Cell[12854, 418, 170, 5, 59, "Input"],
-Cell[13027, 425, 443, 16, 150, "Output"]
+Cell[13240, 430, 170, 5, 59, "Input"],
+Cell[13413, 437, 443, 16, 150, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13507, 446, 170, 5, 59, "Input"],
-Cell[13680, 453, 443, 16, 150, "Output"]
+Cell[13893, 458, 170, 5, 59, "Input"],
+Cell[14066, 465, 443, 16, 150, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14160, 474, 168, 5, 59, "Input"],
-Cell[14331, 481, 439, 16, 162, "Output"]
+Cell[14546, 486, 168, 5, 59, "Input"],
+Cell[14717, 493, 439, 16, 162, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14807, 502, 222, 7, 59, "Input"],
-Cell[15032, 511, 811, 28, 258, "Output"]
+Cell[15193, 514, 222, 7, 59, "Input"],
+Cell[15418, 523, 811, 28, 258, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15880, 544, 179, 5, 59, "Input"],
-Cell[16062, 551, 531, 19, 177, "Output"]
+Cell[16266, 556, 179, 5, 59, "Input"],
+Cell[16448, 563, 531, 19, 177, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16630, 575, 164, 5, 59, "Input"],
-Cell[16797, 582, 336, 11, 96, "Output"]
+Cell[17016, 587, 164, 5, 59, "Input"],
+Cell[17183, 594, 336, 11, 96, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17170, 598, 237, 7, 59, "Input"],
-Cell[17410, 607, 896, 33, 309, "Output"]
+Cell[17556, 610, 237, 7, 59, "Input"],
+Cell[17796, 619, 896, 33, 309, "Output"]
+}, Open  ]],
+Cell[18707, 655, 59, 2, 45, "Text"],
+Cell[CellGroupData[{
+Cell[18791, 661, 159, 5, 59, "Input"],
+Cell[18953, 668, 441, 9, 35, "Message"],
+Cell[19397, 679, 122, 3, 58, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19556, 687, 134, 4, 59, "Input"],
+Cell[19693, 693, 441, 9, 35, "Message"],
+Cell[20137, 704, 122, 3, 77, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18355, 646, 27, 0, 47, "Subsection"],
-Cell[18385, 648, 58, 2, 45, "Text"],
-Cell[18446, 652, 6663, 177, 901, "Input"],
-Cell[25112, 831, 75, 0, 45, "Text"],
+Cell[20308, 713, 27, 0, 47, "Subsection"],
+Cell[20338, 715, 58, 2, 45, "Text"],
+Cell[20399, 719, 6663, 177, 901, "Input"],
+Cell[27065, 898, 75, 0, 45, "Text"],
 Cell[CellGroupData[{
-Cell[25212, 835, 149, 5, 59, "Input"],
-Cell[25364, 842, 111, 4, 58, "Output"]
+Cell[27165, 902, 149, 5, 59, "Input"],
+Cell[27317, 909, 111, 4, 77, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25512, 851, 195, 7, 59, "Input"],
-Cell[25710, 860, 414, 15, 150, "Output"]
+Cell[27465, 918, 195, 7, 59, "Input"],
+Cell[27663, 927, 414, 15, 169, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26161, 880, 197, 7, 59, "Input"],
-Cell[26361, 889, 443, 16, 150, "Output"]
+Cell[28114, 947, 197, 7, 59, "Input"],
+Cell[28314, 956, 443, 16, 169, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26841, 910, 196, 7, 59, "Input"],
-Cell[27040, 919, 442, 16, 150, "Output"]
+Cell[28794, 977, 196, 7, 59, "Input"],
+Cell[28993, 986, 442, 16, 169, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27519, 940, 197, 7, 59, "Input"],
-Cell[27719, 949, 443, 16, 150, "Output"]
+Cell[29472, 1007, 197, 7, 59, "Input"],
+Cell[29672, 1016, 443, 16, 169, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28199, 970, 197, 7, 59, "Input"],
-Cell[28399, 979, 443, 16, 150, "Output"]
+Cell[30152, 1037, 197, 7, 59, "Input"],
+Cell[30352, 1046, 443, 16, 169, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28879, 1000, 195, 7, 59, "Input"],
-Cell[29077, 1009, 439, 16, 162, "Output"]
+Cell[30832, 1067, 195, 7, 59, "Input"],
+Cell[31030, 1076, 439, 16, 181, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29553, 1030, 248, 8, 59, "Input"],
-Cell[29804, 1040, 811, 28, 258, "Output"]
+Cell[31506, 1097, 248, 8, 59, "Input"],
+Cell[31757, 1107, 811, 28, 277, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30652, 1073, 206, 7, 59, "Input"],
-Cell[30861, 1082, 531, 19, 177, "Output"]
+Cell[32605, 1140, 206, 7, 59, "Input"],
+Cell[32814, 1149, 531, 19, 196, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31429, 1106, 263, 8, 59, "Input"],
-Cell[31695, 1116, 896, 33, 309, "Output"]
+Cell[33382, 1173, 263, 8, 59, "Input"],
+Cell[33648, 1183, 896, 33, 328, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32628, 1154, 188, 6, 59, "Input"],
-Cell[32819, 1162, 336, 11, 133, "Output"]
+Cell[34581, 1221, 188, 6, 59, "Input"],
+Cell[34772, 1229, 336, 11, 115, "Output"]
+}, Open  ]],
+Cell[35123, 1243, 59, 2, 45, "Text"],
+Cell[CellGroupData[{
+Cell[35207, 1249, 186, 7, 59, "Input"],
+Cell[35396, 1258, 441, 9, 35, "Message"],
+Cell[35840, 1269, 122, 3, 77, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35999, 1277, 157, 5, 59, "Input"],
+Cell[36159, 1284, 441, 9, 35, "Message"],
+Cell[36603, 1295, 122, 3, 77, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -1327,4 +1474,4 @@ Cell[32819, 1162, 336, 11, 133, "Output"]
 
 (* End of internal cache information *)
 
-(* NotebookSignature 1w063nfE0C4JpCgwTT1TniRo *)
+(* NotebookSignature owpfI9QmBirC5A10foKGzUZm *)
