@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1063,         20]
-NotebookDataLength[   2796287,      49459]
-NotebookOptionsPosition[   2787963,      49172]
-NotebookOutlinePosition[   2788411,      49190]
-CellTagsIndexPosition[   2788368,      49187]
+NotebookDataLength[   2909067,      52535]
+NotebookOptionsPosition[   2899890,      52220]
+NotebookOutlinePosition[   2900338,      52238]
+CellTagsIndexPosition[   2900295,      52235]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -462,13 +462,6 @@ Cell["PRIMITIVE PUNKS", "Section"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"ill", "=", 
-   RowBox[{"(", "\[NoBreak]", GridBox[{
-      {"0", "0", "0", "0"},
-      {"0", "0", "0", "0"},
-      {"1", "0", "0", "0"},
-      {"0", "1", "0", "0"}
-     }], "\[NoBreak]", ")"}]}], ";", 
   RowBox[{"iul", "=", 
    RowBox[{"(", "\[NoBreak]", GridBox[{
       {"1", "0", "0", "0"},
@@ -489,6 +482,48 @@ Cell[BoxData[
       {"0", "0", "0", "0"},
       {"0", "0", "1", "0"},
       {"0", "0", "0", "1"}
+     }], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{"ill", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"0", "0", "0", "0"},
+      {"0", "0", "0", "0"},
+      {"1", "0", "0", "0"},
+      {"0", "1", "0", "0"}
+     }], "\[NoBreak]", ")"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pul", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"0", "1", "0", "0"},
+      {
+       RowBox[{"-", "1"}], "0", "0", "0"},
+      {"0", "0", "0", "0"},
+      {"0", "0", "0", "0"}
+     }], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{"pur", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"0", "0", "0", "1"},
+      {"0", "0", 
+       RowBox[{"-", "1"}], "0"},
+      {"0", "0", "0", "0"},
+      {"0", "0", "0", "0"}
+     }], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{"plr", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"0", "0", "0", "0"},
+      {"0", "0", "0", "0"},
+      {"0", "0", "0", "1"},
+      {"0", "0", 
+       RowBox[{"-", "1"}], "0"}
+     }], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{"pll", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"0", "0", "0", "0"},
+      {"0", "0", "0", "0"},
+      {"0", "1", "0", "0"},
+      {
+       RowBox[{"-", "1"}], "0", "0", "0"}
      }], "\[NoBreak]", ")"}]}], ";"}]], "Input"],
 
 Cell[CellGroupData[{
@@ -528,106 +563,17 @@ Cell[BoxData[
       {"0", "Infinity", "0", "0"},
       {"0", "0", "Infinity", "0"},
       {"0", "0", "0", "Infinity"}
-     }], "\[NoBreak]", ")"}]}], ";"}]], "Input"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Booleans", "Subsection"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"falsePunk", "=", 
-   RowBox[{"(", "\[NoBreak]", GridBox[{
-      {"0", "0", "0", "0"},
-      {"0", "0", "0", "0"},
-      {"0", "0", "0", "0"},
-      {"0", "0", "0", "0"}
      }], "\[NoBreak]", ")"}]}], ";", 
-  RowBox[{"truePunk", "=", 
-   RowBox[{"(", "\[NoBreak]", GridBox[{
-      {"1", "0", "0", "0"},
-      {"0", "1", "0", "0"},
-      {"0", "0", "1", "0"},
-      {"0", "0", "0", "1"}
-     }], "\[NoBreak]", ")"}]}], ";"}]], "Input"],
-
-Cell["truePunk composed with any matrix is that matrix", "Text"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"truePunk", ".", "p"}], "===", "p"}]], "Input"],
-
-Cell[BoxData["True"], "Output"]
-}, Open  ]],
-
-Cell["falsePunk annihilates any matrix", "Text"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"falsePunk", ".", "p"}], "===", "falsePunk"}]], "Input"],
-
-Cell[BoxData["True"], "Output"]
-}, Open  ]],
-
-Cell["A falsey matrix is one whose CHIEF matches the false matrix", "Text"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"falsey", "[", "m_", "]"}], ":=", 
-  RowBox[{
-   RowBox[{"CHF", "[", "m", "]"}], "===", "falsePunk"}]}]], "Input"],
-
-Cell["A truthy matrix is one whose CHIEF is not falsey", "Text"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"truthy", "[", "m_", "]"}], ":=", 
-  RowBox[{
-   RowBox[{"CHF", "[", "m", "]"}], "=!=", "falsePunk"}]}]], "Input"],
-
-Cell["\<\
-The other registers don't matter when testing truthiness or falseyness\
-\>", "Text"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"(", 
-    RowBox[{"truthy", "[", 
-     RowBox[{"MV", "[", 
-      RowBox[{"#", ",", "p"}], "]"}], "]"}], ")"}], "&"}], "/@", 
-  "registers"}]], "Input"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"True", ",", "True", ",", "True", ",", "True"}], "}"}]], "Output"]
+  RowBox[{"zero", "=", 
+   RowBox[{"ConstantArray", "[", 
+    RowBox[{"0", ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "4"}], "}"}]}], "]"}]}], ";"}]], "Input"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"(", 
-    RowBox[{"falsey", "[", 
-     RowBox[{"MV", "[", 
-      RowBox[{"#", ",", "p"}], "]"}], "]"}], ")"}], "&"}], "/@", 
-  "registers"}]], "Input"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"False", ",", "False", ",", "False", ",", "False"}], 
-  "}"}]], "Output"]
-}, Open  ]],
-
-Cell["Convenience:", "Text"],
+Cell["Convenience", "Subsection"],
 
 Cell[BoxData[{
  RowBox[{
@@ -643,7 +589,12 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"{", 
       RowBox[{"M", "/@", "stack"}], "}"}], ",", 
-     RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]}], ";"}]}], "Input"],
+     RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]}], ";"}]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Combos", "Subsection"],
 
 Cell[TextData[{
  "Investigate what any particular operator does to a sample punk in various \
@@ -708,6 +659,732 @@ Cell[BoxData[
             RowBox[{"m", ".", "pT", ".", "mT", ".", "p"}]}], "*)"}], 
           "}"}]}]}], "\[IndentingNewLine]", "}"}], "]"}]}], "]"}]}], 
   ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Inverse", "[", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"a", "b"},
+      {"c", "d"}
+     }], "\[NoBreak]", ")"}], "]"}], "//", "M"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {
+         FractionBox["d", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "c"}], "+", 
+           RowBox[{"a", " ", "d"}]}]], 
+         RowBox[{"-", 
+          FractionBox["b", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "b"}], " ", "c"}], "+", 
+            RowBox[{"a", " ", "d"}]}]]}]},
+        {
+         RowBox[{"-", 
+          FractionBox["c", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "b"}], " ", "c"}], "+", 
+            RowBox[{"a", " ", "d"}]}]]}], 
+         FractionBox["a", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "b"}], " ", "c"}], "+", 
+           RowBox[{"a", " ", "d"}]}]]}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.175]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The combination ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["pul", "T"], ".", 
+    SuperscriptBox["p", "T"], ".", "pul", ".", "p"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " equals ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Det", "[", "p", "]"}], "*", 
+    RowBox[{"Identity", "[", "2", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"T", "@", "pul"}], ".", 
+   RowBox[{"T", "@", "p"}], ".", "pul", ".", "p"}], "//", "M"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "b"}], " ", "c"}], "+", 
+          RowBox[{"a", " ", "d"}]}], "0"},
+        {"0", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "b"}], " ", "c"}], "+", 
+          RowBox[{"a", " ", "d"}]}]}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.175]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+     TagBox[GridBox[{
+        {
+         RowBox[{
+          RowBox[{"d", " ", "\[Alpha]"}], "-", 
+          RowBox[{"b", " ", "\[Gamma]"}]}], 
+         RowBox[{
+          RowBox[{"d", " ", "\[Beta]"}], "-", 
+          RowBox[{"b", " ", "\[Delta]"}]}]},
+        {
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "c"}], " ", "\[Alpha]"}], "+", 
+          RowBox[{"a", " ", "\[Gamma]"}]}], 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "c"}], " ", "\[Beta]"}], "+", 
+          RowBox[{"a", " ", "\[Delta]"}]}]}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.175]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+    {
+     TagBox[GridBox[{
+        {"0", "0"},
+        {"0", "0"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.175]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+     TagBox[GridBox[{
+        {"0", "0"},
+        {"0", "0"}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.175]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      Function[BoxForm`e$, 
+       TableForm[
+       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"combos", "[", 
+  RowBox[{"pul", ",", 
+   RowBox[{"p", "//", "T"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {"b", "d"},
+            {
+             RowBox[{"-", "a"}], 
+             RowBox[{"-", "c"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"\[ScriptCapitalB]", "\[ScriptCapitalD]"},
+            {
+             RowBox[{"-", "\[ScriptCapitalA]"}], 
+             RowBox[{"-", "\[ScriptCapitalC]"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]},
+        {
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"], 
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {"c", 
+             RowBox[{"-", "a"}]},
+            {"d", 
+             RowBox[{"-", "b"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]},
+        {
+         TagBox[GridBox[{
+            {"\[Gamma]", 
+             RowBox[{"-", "\[Alpha]"}]},
+            {"\[Delta]", 
+             RowBox[{"-", "\[Beta]"}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"], 
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {"d", 
+             RowBox[{"-", "b"}]},
+            {
+             RowBox[{"-", "c"}], "a"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]},
+        {
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]},
+    {
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "b"}], 
+             RowBox[{"-", "d"}]},
+            {"a", "c"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "\[ScriptCapitalB]"}], 
+             RowBox[{"-", "\[ScriptCapitalD]"}]},
+            {"\[ScriptCapitalA]", "\[ScriptCapitalC]"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]},
+        {
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"], 
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "c"}], "a"},
+            {
+             RowBox[{"-", "d"}], "b"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]},
+        {
+         TagBox[GridBox[{
+            {
+             RowBox[{"-", "\[Gamma]"}], "\[Alpha]"},
+            {
+             RowBox[{"-", "\[Delta]"}], "\[Beta]"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"], 
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {"d", 
+             RowBox[{"-", "b"}]},
+            {
+             RowBox[{"-", "c"}], "a"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]},
+        {
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -20140,7 +20817,7 @@ uRhu6qmb9qP8/4Xv8V94+gae
   BaseStyle->"ImageGraphics",
   ImageSizeRaw->{400, 388},
   PlotRange->{{0, 400}, {0, 388}}]], "Output"]
-}, {2}]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -43622,7 +44299,7 @@ woK9v86wxf2VObKrbY1/dY4M1pZlur5xrCPY9u9y/LM5MtjvP9g5N8FyZEd5
   BaseStyle->"ImageGraphics",
   ImageSizeRaw->{457, 800},
   PlotRange->{{0, 457}, {0, 800}}]], "Output"]
-}, {2}]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -46278,9 +46955,7 @@ Cell[CellGroupData[{
 
 Cell["ROTC -- like Roll Down", "Subsection"],
 
-Cell["\<\
-Rotate All skas clockwise within a punk\
-\>", "Text"],
+Cell["Rotate All skas clockwise within a punk", "Text"],
 
 Cell[BoxData[{
  RowBox[{
@@ -47734,6 +48409,220 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
+Cell["DET", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DET", "[", "m_", "]"}], ":=", 
+  RowBox[{"CHF", "@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"T", "@", "pul"}], ".", 
+     RowBox[{"T", "@", "m"}], ".", "pul", ".", "m"}], ")"}]}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"show", "[", 
+  RowBox[{"q", ",", "DET"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {"x", "y"},
+            {"z", "w"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"\[Xi]", "\[Psi]"},
+            {"\[Zeta]", "\[Omega]"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]},
+        {
+         TagBox[GridBox[{
+            {"\[ScriptCapitalX]", "\[ScriptCapitalY]"},
+            {"\[ScriptCapitalZ]", "\[ScriptCapitalW]"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"\[DoubleStruckCapitalX]", "\[DoubleStruckCapitalY]"},
+            {"\[DoubleStruckCapitalZ]", "\[DoubleStruckCapitalW]"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"], "\<\"\[LongRightArrow]\"\>", 
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {
+             RowBox[{
+              RowBox[{"w", " ", "x"}], "-", 
+              RowBox[{"y", " ", "z"}]}], "0"},
+            {"0", 
+             RowBox[{
+              RowBox[{"w", " ", "x"}], "-", 
+              RowBox[{"y", " ", "z"}]}]}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]},
+        {
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]], 
+         TagBox[GridBox[{
+            {"0", "0"},
+            {"0", "0"}
+           },
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.175]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}}],
+          Function[BoxForm`e$, 
+           TableForm[
+           BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
+            Center]]]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["INV", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"INV", "[", "m_", "]"}], ":=", 
+   RowBox[{"Throw", "[", "\"\<Not Implemented\>\"", "]"}]}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["SWAP", "Subsection"],
 
 Cell[BoxData[
@@ -47935,7 +48824,8 @@ Cell[CellGroupData[{
 Cell["COND", "Subsection"],
 
 Cell["\<\
-If the chief is zero, AMV[LR], if chief is Identity[2] AMV[UR], else garbage\
+If the chief (is / has DET) zero, AMV[LR], if chief is Identity[2] AMV[UR], \
+else garbage\
 \>", "Text"],
 
 Cell[TextData[StyleBox["UL.LR - (UL - I2).UR", "Input"]], "Text"],
@@ -48149,14 +49039,17 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   RowBox[{"COND", "[", "m_", "]"}], ":=", 
-  RowBox[{
-   RowBox[{"TIMES", "@", "m"}], "-", 
-   RowBox[{"TIMES", "@", 
-    RowBox[{"ROTC", "@", 
-     RowBox[{"SWAP", "@", 
-      RowBox[{"ROTU", "@", 
-       RowBox[{"(", 
-        RowBox[{"m", "-", "iul"}], ")"}]}]}]}]}]}]}]], "Input"],
+  RowBox[{"CHF", "@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"TIMES", "@", 
+      RowBox[{"(", "m", ")"}]}], "-", 
+     RowBox[{"TIMES", "@", 
+      RowBox[{"ROTC", "@", 
+       RowBox[{"SWAP", "@", 
+        RowBox[{"ROTU", "@", 
+         RowBox[{"(", 
+          RowBox[{"m", "-", "iul"}], ")"}]}]}]}]}]}], ")"}]}]}]], "Input"],
 
 Cell[CellGroupData[{
 
@@ -48193,12 +49086,8 @@ Cell[BoxData[
            BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
             Center]]], 
          TagBox[GridBox[{
-            {
-             RowBox[{"\[DoubleStruckCapitalX]", "-", "\[Xi]"}], 
-             RowBox[{"\[DoubleStruckCapitalY]", "-", "\[Psi]"}]},
-            {
-             RowBox[{"\[DoubleStruckCapitalZ]", "-", "\[Zeta]"}], 
-             RowBox[{"\[DoubleStruckCapitalW]", "-", "\[Omega]"}]}
+            {"0", "0"},
+            {"0", "0"}
            },
            
            GridBoxAlignment->{
@@ -48281,12 +49170,8 @@ Cell[BoxData[
            BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> 
             Center]]], 
          TagBox[GridBox[{
-            {
-             RowBox[{"\[DoubleStruckCapitalX]", "-", "\[Xi]"}], 
-             RowBox[{"\[DoubleStruckCapitalY]", "-", "\[Psi]"}]},
-            {
-             RowBox[{"\[DoubleStruckCapitalZ]", "-", "\[Zeta]"}], 
-             RowBox[{"\[DoubleStruckCapitalW]", "-", "\[Omega]"}]}
+            {"0", "0"},
+            {"0", "0"}
            },
            
            GridBoxAlignment->{
@@ -48357,167 +49242,2330 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
+Cell["Working hypothesis", "Subsection"],
+
+Cell["\<\
+falsey is zero determinant; truthy is non-zero determinant.\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["NAND", "Subsection"],
 
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "RAN", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RAN", "[", "]"}], ":=", 
+  RowBox[{"RandomReal", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "4"}], "}"}]}], "]"}]}]}], "Input"],
+
+Cell[CellGroupData[{
+
 Cell[BoxData[
+ RowBox[{"(", 
+  RowBox[{"M", "/@", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"iul", "+", "iur"}], ",", "iul", ",", "iur", ",", "zero"}], 
+    "}"}]}], ")"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"1", "0"},
+          {"0", "1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"1", "0"},
+          {"0", "1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"1", "0"},
+          {"0", "1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"1", "0"},
+          {"0", "1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"M", "/@", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"TIMES", "@", 
+      RowBox[{"(", 
+       RowBox[{"#", "+", 
+        RowBox[{"SWAP", "@", "#"}]}], ")"}]}], "&"}], "/@", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"iul", "+", "iur"}], ",", "iul", ",", "iur", ",", "zero"}], 
+     "}"}]}], ")"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"4", "0"},
+          {"0", "4"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"1", "0"},
+          {"0", "1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"1", "0"},
+          {"0", "1"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"M", "/@", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"TIMES", "@", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"#", "-", "iul"}], ")"}], "+", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"SWAP", "@", "#"}], "-", "iul"}], ")"}]}], ")"}]}], "&"}], "/@", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"iul", "+", "iur"}], ",", "iul", ",", "iur", ",", "zero"}], 
+     "}"}]}], ")"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "1"}], "0"},
+          {"0", 
+           RowBox[{"-", "1"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"-", "1"}], "0"},
+          {"0", 
+           RowBox[{"-", "1"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"NAND", "[", "m_", "]"}], ":=", 
-   RowBox[{"CHF", "@", "m"}]}], ";"}]], "Input"],
+   RowBox[{"iul", "+", "iul", "+", "iul", "+", "iul", "-", 
+    RowBox[{"TIMES", "@", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"m", "-", "iul"}], ")"}], "+", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"SWAP", "@", "m"}], "-", "iul"}], ")"}]}], ")"}]}], "-", 
+    RowBox[{"TIMES", "@", 
+     RowBox[{"(", 
+      RowBox[{"m", "+", 
+       RowBox[{"SWAP", "@", "m"}]}], ")"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"M", "/@", 
+   RowBox[{"NAND", "/@", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"iul", "+", "iur"}], ",", "iul", ",", "iur", ",", "zero"}], 
+     "}"}]}]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", "=", 
+       RowBox[{"RAN", "[", "]"}]}], "}"}], ",", 
+     RowBox[{"(", 
+      RowBox[{"M", "/@", 
+       RowBox[{"{", 
+        RowBox[{"p", ",", 
+         RowBox[{"ST", "@", "p"}], ",", 
+         RowBox[{"SWAP", "@", 
+          RowBox[{"ST", "@", "p"}]}], ",", 
+         RowBox[{"DUP", "@", 
+          RowBox[{"ST", "@", "p"}]}]}], "}"}]}], ")"}]}], "]"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", "=", 
+       RowBox[{"RAN", "[", "]"}]}], "}"}], ",", 
+     RowBox[{"(", 
+      RowBox[{"M", "/@", 
+       RowBox[{"NAND", "/@", 
+        RowBox[{"{", 
+         RowBox[{"p", ",", 
+          RowBox[{"ST", "@", "p"}], ",", 
+          RowBox[{"SWAP", "@", 
+           RowBox[{"ST", "@", "p"}]}], ",", 
+          RowBox[{"DUP", "@", 
+           RowBox[{"ST", "@", "p"}]}]}], "}"}]}]}], ")"}]}], "]"}], 
+   "*)"}]}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"4", "0"},
+          {"0", "4"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"4", "0"},
+          {"0", "4"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"4", "0"},
+          {"0", "4"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]}], "}"}]], "Output"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"(", 
-   RowBox[{"NAND", "@", "p"}], ")"}], "//", "M"}]], "Input"],
+  RowBox[{"M", "/@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"TIMES", "@", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"#", "-", 
+           RowBox[{"CHF", "@", "#"}]}], ")"}], "+", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"SWAP", "@", "#"}], "-", 
+           RowBox[{"CHF", "@", "#"}]}], ")"}]}], ")"}]}], "&"}], "/@", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"p", ",", 
+       RowBox[{"ST", "@", "p"}], ",", 
+       RowBox[{"SWAP", "@", 
+        RowBox[{"ST", "@", "p"}]}], ",", 
+       RowBox[{"DUP", "@", 
+        RowBox[{"ST", "@", "p"}]}]}], "}"}]}], ")"}]}], "//", 
+  "FullSimplify"}]], "Input"],
 
 Cell[BoxData[
- TagBox[GridBox[{
-    {
-     TagBox[GridBox[{
-        {"a", "b"},
-        {"c", "d"}
-       },
-       GridBoxAlignment->{
-        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
-          "RowsIndexed" -> {}},
-       GridBoxSpacings->{"Columns" -> {
-           Offset[0.27999999999999997`], {
-            Offset[0.175]}, 
-           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-           Offset[0.2], {
-            Offset[0.]}, 
-           Offset[0.2]}, "RowsIndexed" -> {}}],
-      Function[BoxForm`e$, 
-       TableForm[
-       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
-     TagBox[GridBox[{
-        {"0", "0"},
-        {"0", "0"}
-       },
-       GridBoxAlignment->{
-        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
-          "RowsIndexed" -> {}},
-       GridBoxSpacings->{"Columns" -> {
-           Offset[0.27999999999999997`], {
-            Offset[0.175]}, 
-           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-           Offset[0.2], {
-            Offset[0.]}, 
-           Offset[0.2]}, "RowsIndexed" -> {}}],
-      Function[BoxForm`e$, 
-       TableForm[
-       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
-    {
-     TagBox[GridBox[{
-        {"0", "0"},
-        {"0", "0"}
-       },
-       GridBoxAlignment->{
-        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
-          "RowsIndexed" -> {}},
-       GridBoxSpacings->{"Columns" -> {
-           Offset[0.27999999999999997`], {
-            Offset[0.175]}, 
-           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-           Offset[0.2], {
-            Offset[0.]}, 
-           Offset[0.2]}, "RowsIndexed" -> {}}],
-      Function[BoxForm`e$, 
-       TableForm[
-       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
-     TagBox[GridBox[{
-        {"0", "0"},
-        {"0", "0"}
-       },
-       GridBoxAlignment->{
-        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
-          "RowsIndexed" -> {}},
-       GridBoxSpacings->{"Columns" -> {
-           Offset[0.27999999999999997`], {
-            Offset[0.175]}, 
-           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-           Offset[0.2], {
-            Offset[0.]}, 
-           Offset[0.2]}, "RowsIndexed" -> {}}],
-      Function[BoxForm`e$, 
-       TableForm[
-       BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
-   },
-   AutoDelete->False,
-   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
-   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-  "Grid"]], "Output"]
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "a"}], "+", "\[Alpha]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"a", "+", "\[Alpha]"}], ")"}]}], "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "b"}], "+", "\[Beta]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"c", "+", "\[Gamma]"}], ")"}]}]}], 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "a"}], "+", "\[Alpha]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"b", "+", "\[Beta]"}], ")"}]}], "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "b"}], "+", "\[Beta]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"d", "+", "\[Delta]"}], ")"}]}]}]},
+          {
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"a", "+", "\[Alpha]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "c"}], "+", "\[Gamma]"}], ")"}]}], "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"c", "+", "\[Gamma]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "d"}], "+", "\[Delta]"}], ")"}]}]}], 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"b", "+", "\[Beta]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "c"}], "+", "\[Gamma]"}], ")"}]}], "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "d"}], "+", "\[Delta]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"d", "+", "\[Delta]"}], ")"}]}]}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{
+            SuperscriptBox["\[Alpha]", "2"], "+", 
+            RowBox[{"\[Beta]", " ", "\[Gamma]"}]}], 
+           RowBox[{"\[Beta]", " ", 
+            RowBox[{"(", 
+             RowBox[{"\[Alpha]", "+", "\[Delta]"}], ")"}]}]},
+          {
+           RowBox[{"\[Gamma]", " ", 
+            RowBox[{"(", 
+             RowBox[{"\[Alpha]", "+", "\[Delta]"}], ")"}]}], 
+           RowBox[{
+            RowBox[{"\[Beta]", " ", "\[Gamma]"}], "+", 
+            SuperscriptBox["\[Delta]", "2"]}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{
+            RowBox[{"-", 
+             SuperscriptBox["\[Alpha]", "2"]}], "-", 
+            RowBox[{"\[Beta]", " ", "\[Gamma]"}]}], 
+           RowBox[{
+            RowBox[{"-", "\[Beta]"}], " ", 
+            RowBox[{"(", 
+             RowBox[{"\[Alpha]", "+", "\[Delta]"}], ")"}]}]},
+          {
+           RowBox[{
+            RowBox[{"-", "\[Gamma]"}], " ", 
+            RowBox[{"(", 
+             RowBox[{"\[Alpha]", "+", "\[Delta]"}], ")"}]}], 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "\[Beta]"}], " ", "\[Gamma]"}], "-", 
+            SuperscriptBox["\[Delta]", "2"]}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"2", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[Alpha]"}], 
+           RowBox[{"2", " ", "\[Beta]"}]},
+          {
+           RowBox[{"2", " ", "\[Gamma]"}], 
+           RowBox[{"2", " ", "\[Delta]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"2", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"2", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"M", "/@", 
+   RowBox[{"(", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"TIMES", "@", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"#", "-", "iul"}], ")"}], "+", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"SWAP", "@", "#"}], "-", "iul"}], ")"}]}], ")"}]}], 
+       "\[IndentingNewLine]", "+", 
+       RowBox[{"TIMES", "@", 
+        RowBox[{"(", 
+         RowBox[{"#", "+", 
+          RowBox[{"SWAP", "@", "#"}]}], ")"}]}]}], "&"}], "/@", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"p", ",", 
+       RowBox[{"ST", "@", "p"}], ",", 
+       RowBox[{"SWAP", "@", 
+        RowBox[{"ST", "@", "p"}]}], ",", 
+       RowBox[{"DUP", "@", 
+        RowBox[{"ST", "@", "p"}]}]}], "}"}]}], ")"}]}], "//", 
+  "FullSimplify"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "2"}], "+", "a", "+", "\[Alpha]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"a", "+", "\[Alpha]"}], ")"}]}], "+", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"a", "+", "\[Alpha]"}], ")"}], "2"], "+", 
+            RowBox[{"2", " ", 
+             RowBox[{"(", 
+              RowBox[{"b", "+", "\[Beta]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"c", "+", "\[Gamma]"}], ")"}]}]}], 
+           RowBox[{"2", " ", 
+            RowBox[{"(", 
+             RowBox[{"b", "+", "\[Beta]"}], ")"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "a", "+", "d", "+", "\[Alpha]", "+", 
+              "\[Delta]"}], ")"}]}]},
+          {
+           RowBox[{"2", " ", 
+            RowBox[{"(", 
+             RowBox[{"c", "+", "\[Gamma]"}], ")"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "a", "+", "d", "+", "\[Alpha]", "+", 
+              "\[Delta]"}], ")"}]}], 
+           RowBox[{
+            RowBox[{"2", " ", 
+             RowBox[{"(", 
+              RowBox[{"b", "+", "\[Beta]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"c", "+", "\[Gamma]"}], ")"}]}], "+", 
+            RowBox[{"2", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "d", "+", "\[Delta]"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"d", "+", "\[Delta]"}], ")"}]}]}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{
+            RowBox[{"2", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "\[Alpha]"}], ")"}], " ", 
+             "\[Alpha]"}], "+", 
+            RowBox[{"2", " ", "\[Beta]", " ", "\[Gamma]"}]}], 
+           RowBox[{"2", " ", "\[Beta]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "\[Alpha]", "+", "\[Delta]"}], ")"}]}]},
+          {
+           RowBox[{"2", " ", "\[Gamma]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "\[Alpha]", "+", "\[Delta]"}], ")"}]}], 
+           RowBox[{"2", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[Beta]", " ", "\[Gamma]"}], "+", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", "\[Delta]"}], ")"}], " ", 
+               "\[Delta]"}]}], ")"}]}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{
+            RowBox[{"2", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "\[Alpha]"}], ")"}], " ", 
+             "\[Alpha]"}], "+", 
+            RowBox[{"2", " ", "\[Beta]", " ", "\[Gamma]"}]}], 
+           RowBox[{"2", " ", "\[Beta]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "\[Alpha]", "+", "\[Delta]"}], ")"}]}]},
+          {
+           RowBox[{"2", " ", "\[Gamma]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "\[Alpha]", "+", "\[Delta]"}], ")"}]}], 
+           RowBox[{"2", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[Beta]", " ", "\[Gamma]"}], "+", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", "\[Delta]"}], ")"}], " ", 
+               "\[Delta]"}]}], ")"}]}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalA]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[ScriptCapitalC]"}], 
+           RowBox[{"4", " ", "\[ScriptCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"], ",", 
+   TagBox[GridBox[{
+      {
+       TagBox[GridBox[{
+          {"0", "0"},
+          {"0", "0"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[Alpha]"}], 
+           RowBox[{"4", " ", "\[Beta]"}]},
+          {
+           RowBox[{"4", " ", "\[Gamma]"}], 
+           RowBox[{"4", " ", "\[Delta]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]},
+      {
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]], 
+       TagBox[GridBox[{
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalA]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalB]"}]},
+          {
+           RowBox[{"4", " ", "\[DoubleStruckCapitalC]"}], 
+           RowBox[{"4", " ", "\[DoubleStruckCapitalD]"}]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.175]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}],
+        Function[BoxForm`e$, 
+         TableForm[
+         BoxForm`e$, TableSpacing -> {0., 0.25}, TableAlignments -> Center]]]}
+     },
+     AutoDelete->False,
+     GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]}], "}"}]], "Output"]
 }, Open  ]],
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"ClearAll", "[", 
-   RowBox[{"fish", ",", "tt", ",", "tf", ",", "ft", ",", "ff"}], "]"}], 
-  ";"}], "\[IndentingNewLine]", 
+  RowBox[{"ClearAll", "[", "fish", "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"fish", "=", 
    RowBox[{"{", 
     RowBox[{
     "CHF", ",", "dot", ",", "iul", ",", "AMV", ",", "iul", ",", "plus", ",", 
      "ill", ",", "iul", ",", "CY", ",", "ill", ",", "AMV"}], "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"clear", "[", "]"}], ";", 
-  RowBox[{"tt", "=", 
-   RowBox[{"exec", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"p", ",", "q"}], "}"}], "~", "Join", "~", "fish"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"clear", "[", "]"}], ";", 
-  RowBox[{"tf", "=", 
-   RowBox[{"exec", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"p", ",", 
-       RowBox[{"ST", "@", "p"}]}], "}"}], "~", "Join", "~", "fish"}], "]"}]}],
-   ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"clear", "[", "]"}], ";", 
-  RowBox[{"ft", "=", 
-   RowBox[{"exec", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"ST", "@", "p"}], ",", "q"}], "}"}], "~", "Join", "~", 
-     "fish"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"clear", "[", "]"}], ";", 
-  RowBox[{"ff", "=", 
-   RowBox[{"exec", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"ST", "@", "p"}], ",", 
-       RowBox[{"ST", "@", "q"}]}], "}"}], "~", "Join", "~", "fish"}], "]"}]}],
-   ";"}], "\[IndentingNewLine]", 
- RowBox[{"Grid", "[", 
-  RowBox[{"MapThread", "[", 
-   RowBox[{"Map", ",", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"pretty", "[", 
-          RowBox[{"{", "#", "}"}], "]"}], "&"}], ",", 
-        RowBox[{
-         RowBox[{"falsey", "[", 
-          RowBox[{"#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
-           "]"}], "&"}], ",", "Length"}], "}"}], ",", 
-      RowBox[{"Table", "[", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"tt", ",", "tf", ",", "ft", ",", "ff"}], "}"}], ",", 
-        RowBox[{"{", "3", "}"}]}], "]"}]}], "}"}]}], "]"}], "]"}]}], "Input"]
+  ";"}]}], "Input"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -49240,236 +52288,264 @@ Cell[15435, 449, 158, 5, 36, "Text"]
 Cell[CellGroupData[{
 Cell[15642, 460, 34, 0, 91, "Section"],
 Cell[15679, 462, 882, 29, 115, "Input"],
+Cell[16564, 493, 974, 33, 115, "Input"],
 Cell[CellGroupData[{
-Cell[16586, 495, 31, 0, 44, "Subsection"],
-Cell[16620, 497, 155, 5, 49, "Input"],
-Cell[16778, 504, 420, 9, 59, "Text"],
-Cell[17201, 515, 185, 5, 36, "Text"],
-Cell[17389, 522, 274, 8, 115, "Input"]
+Cell[17563, 530, 31, 0, 44, "Subsection"],
+Cell[17597, 532, 155, 5, 49, "Input"],
+Cell[17755, 539, 420, 9, 59, "Text"],
+Cell[18178, 550, 185, 5, 36, "Text"],
+Cell[18366, 557, 429, 13, 115, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17700, 535, 30, 0, 44, "Subsection"],
-Cell[17733, 537, 469, 15, 115, "Input"],
-Cell[18205, 554, 64, 0, 36, "Text"],
-Cell[CellGroupData[{
-Cell[18294, 558, 81, 2, 48, "Input"],
-Cell[18378, 562, 31, 0, 48, "Output"]
-}, Open  ]],
-Cell[18424, 565, 48, 0, 36, "Text"],
-Cell[CellGroupData[{
-Cell[18497, 569, 90, 2, 48, "Input"],
-Cell[18590, 573, 31, 0, 48, "Output"]
-}, Open  ]],
-Cell[18636, 576, 75, 0, 36, "Text"],
-Cell[18714, 578, 148, 4, 49, "Input"],
-Cell[18865, 584, 64, 0, 36, "Text"],
-Cell[18932, 586, 148, 4, 49, "Input"],
-Cell[19083, 592, 94, 2, 36, "Text"],
-Cell[CellGroupData[{
-Cell[19202, 598, 197, 7, 49, "Input"],
-Cell[19402, 607, 105, 2, 48, "Output"]
+Cell[18832, 575, 33, 0, 44, "Subsection"],
+Cell[18868, 577, 463, 14, 91, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19544, 614, 197, 7, 49, "Input"],
-Cell[19744, 623, 112, 3, 48, "Output"]
-}, Open  ]],
-Cell[19871, 629, 28, 0, 36, "Text"],
-Cell[19902, 631, 463, 14, 91, "Input"],
-Cell[20368, 647, 584, 20, 40, "Text"],
-Cell[20955, 669, 1469, 40, 133, "Input"],
+Cell[19368, 596, 28, 0, 44, "Subsection"],
+Cell[19399, 598, 584, 20, 40, "Text"],
+Cell[19986, 620, 1469, 40, 133, "Input"],
 Cell[CellGroupData[{
-Cell[22449, 713, 84, 2, 48, "Input"],
-Cell[22536, 717, 19232, 511, 193, "Output"]
+Cell[21480, 664, 185, 6, 71, "Input"],
+Cell[21668, 672, 1511, 46, 89, "Output"]
 }, Open  ]],
+Cell[23194, 721, 419, 15, 40, "Text"],
 Cell[CellGroupData[{
-Cell[41805, 1233, 84, 2, 48, "Input"],
-Cell[41892, 1237, 19496, 511, 193, "Output"]
+Cell[23638, 740, 145, 4, 48, "Input"],
+Cell[23786, 746, 3436, 98, 109, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[61425, 1753, 84, 2, 48, "Input"],
-Cell[61512, 1757, 19232, 511, 193, "Output"]
+Cell[27259, 849, 109, 3, 48, "Input"],
+Cell[27371, 854, 19548, 531, 193, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[80781, 2273, 84, 2, 48, "Input"],
-Cell[80868, 2277, 18968, 511, 193, "Output"]
+Cell[46956, 1390, 84, 2, 48, "Input"],
+Cell[47043, 1394, 19232, 511, 193, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66312, 1910, 84, 2, 48, "Input"],
+Cell[66399, 1914, 19496, 511, 193, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[85932, 2430, 84, 2, 48, "Input"],
+Cell[86019, 2434, 19232, 511, 193, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105288, 2950, 84, 2, 48, "Input"],
+Cell[105375, 2954, 18968, 511, 193, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[99897, 2795, 41, 0, 91, "Section"],
-Cell[99941, 2797, 110, 3, 36, "Text"],
+Cell[124404, 3472, 41, 0, 91, "Section"],
+Cell[124448, 3474, 110, 3, 36, "Text"],
 Cell[CellGroupData[{
-Cell[100076, 2804, 528460, 8668, 516, "Input"],
-Cell[628539, 11474, 528437, 8667, 516, "Output"]
-}, {2}]],
+Cell[124583, 3481, 528460, 8668, 516, "Input"],
+Cell[653046, 12151, 528437, 8667, 516, "Output"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[1157010, 20146, 715722, 11738, 1031, "Input"],
-Cell[1872735, 31886, 715699, 11737, 1031, "Output"]
-}, {2}]],
+Cell[1181520, 20823, 715722, 11738, 1031, "Input"],
+Cell[1897245, 32563, 715699, 11737, 1031, "Output"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[2588468, 43628, 26, 0, 44, "Subsection"],
-Cell[2588497, 43630, 179, 4, 36, "Text"],
-Cell[2588679, 43636, 2248, 62, 322, "Input"],
+Cell[2612981, 44305, 26, 0, 44, "Subsection"],
+Cell[2613010, 44307, 179, 4, 36, "Text"],
+Cell[2613192, 44313, 2248, 62, 322, "Input"],
 Cell[CellGroupData[{
-Cell[2590952, 43702, 255, 9, 49, "Input"],
-Cell[2591210, 43713, 12574, 342, 109, "Output"]
+Cell[2615465, 44379, 255, 9, 49, "Input"],
+Cell[2615723, 44390, 12574, 342, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2603833, 44061, 25, 0, 44, "Subsection"],
-Cell[2603861, 44063, 88, 2, 36, "Text"],
-Cell[2603952, 44067, 2275, 66, 301, "Input"],
+Cell[2628346, 44738, 25, 0, 44, "Subsection"],
+Cell[2628374, 44740, 88, 2, 36, "Text"],
+Cell[2628465, 44744, 2275, 66, 301, "Input"],
 Cell[CellGroupData[{
-Cell[2606252, 44137, 256, 9, 49, "Input"],
-Cell[2606511, 44148, 12753, 342, 109, "Output"]
+Cell[2630765, 44814, 256, 9, 49, "Input"],
+Cell[2631024, 44825, 12753, 342, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2619313, 44496, 24, 0, 44, "Subsection"],
-Cell[2619340, 44498, 161, 6, 36, "Text"],
-Cell[2619504, 44506, 231, 7, 49, "Input"],
+Cell[2643826, 45173, 24, 0, 44, "Subsection"],
+Cell[2643853, 45175, 161, 6, 36, "Text"],
+Cell[2644017, 45183, 231, 7, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2619760, 44517, 305, 10, 48, "Input"],
-Cell[2620068, 44529, 6456, 174, 109, "Output"]
+Cell[2644273, 45194, 305, 10, 48, "Input"],
+Cell[2644581, 45206, 6456, 174, 109, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2626561, 44708, 298, 9, 49, "Input"],
-Cell[2626862, 44719, 50544, 1353, 359, "Output"]
+Cell[2651074, 45385, 298, 9, 49, "Input"],
+Cell[2651375, 45396, 50544, 1353, 359, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2677455, 46078, 25, 0, 44, "Subsection"],
-Cell[2677483, 46080, 96, 2, 36, "Text"],
-Cell[2677582, 46084, 190, 6, 49, "Input"],
+Cell[2701968, 46755, 25, 0, 44, "Subsection"],
+Cell[2701996, 46757, 96, 2, 36, "Text"],
+Cell[2702095, 46761, 190, 6, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2677797, 46094, 80, 2, 48, "Input"],
-Cell[2677880, 46098, 2722, 76, 109, "Output"]
+Cell[2702310, 46771, 80, 2, 48, "Input"],
+Cell[2702393, 46775, 2722, 76, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2680651, 46180, 24, 0, 44, "Subsection"],
-Cell[2680678, 46182, 75, 0, 36, "Text"],
-Cell[2680756, 46184, 134, 4, 49, "Input"],
+Cell[2705164, 46857, 24, 0, 44, "Subsection"],
+Cell[2705191, 46859, 75, 0, 36, "Text"],
+Cell[2705269, 46861, 134, 4, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2680915, 46192, 79, 2, 48, "Input"],
-Cell[2680997, 46196, 2901, 76, 109, "Output"]
+Cell[2705428, 46869, 79, 2, 48, "Input"],
+Cell[2705510, 46873, 2901, 76, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2683947, 46278, 44, 0, 44, "Subsection"],
-Cell[2683994, 46280, 63, 2, 36, "Text"],
-Cell[2684060, 46284, 394, 11, 70, "Input"],
-Cell[2684457, 46297, 486, 13, 70, "Input"],
+Cell[2708460, 46955, 44, 0, 44, "Subsection"],
+Cell[2708507, 46957, 55, 0, 36, "Text"],
+Cell[2708565, 46959, 394, 11, 70, "Input"],
+Cell[2708962, 46972, 486, 13, 70, "Input"],
 Cell[CellGroupData[{
-Cell[2684968, 46314, 83, 2, 48, "Input"],
-Cell[2685054, 46318, 6745, 174, 109, "Output"]
+Cell[2709473, 46989, 83, 2, 48, "Input"],
+Cell[2709559, 46993, 6745, 174, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2691848, 46498, 42, 0, 44, "Subsection"],
-Cell[2691893, 46500, 486, 13, 70, "Input"],
+Cell[2716353, 47173, 42, 0, 44, "Subsection"],
+Cell[2716398, 47175, 486, 13, 70, "Input"],
 Cell[CellGroupData[{
-Cell[2692404, 46517, 83, 2, 48, "Input"],
-Cell[2692490, 46521, 6745, 174, 109, "Output"]
+Cell[2716909, 47192, 83, 2, 48, "Input"],
+Cell[2716995, 47196, 6745, 174, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2699284, 46701, 39, 0, 44, "Subsection"],
-Cell[2699326, 46703, 183, 6, 49, "Input"],
+Cell[2723789, 47376, 39, 0, 44, "Subsection"],
+Cell[2723831, 47378, 183, 6, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2699534, 46713, 82, 2, 48, "Input"],
-Cell[2699619, 46717, 6681, 174, 109, "Output"]
+Cell[2724039, 47388, 82, 2, 48, "Input"],
+Cell[2724124, 47392, 6681, 174, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2706349, 46897, 26, 0, 44, "Subsection"],
-Cell[2706378, 46899, 135, 3, 36, "Text"],
-Cell[2706516, 46904, 188, 9, 36, "Text"],
-Cell[2706707, 46915, 426, 12, 49, "Input"],
+Cell[2730854, 47572, 26, 0, 44, "Subsection"],
+Cell[2730883, 47574, 135, 3, 36, "Text"],
+Cell[2731021, 47579, 188, 9, 36, "Text"],
+Cell[2731212, 47590, 426, 12, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2707158, 46931, 83, 2, 48, "Input"],
-Cell[2707244, 46935, 6945, 178, 111, "Output"]
+Cell[2731663, 47606, 83, 2, 48, "Input"],
+Cell[2731749, 47610, 6945, 178, 111, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2714238, 47119, 27, 0, 44, "Subsection"],
-Cell[2714268, 47121, 427, 12, 49, "Input"],
+Cell[2738743, 47794, 27, 0, 44, "Subsection"],
+Cell[2738773, 47796, 427, 12, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2714720, 47137, 84, 2, 48, "Input"],
-Cell[2714807, 47141, 6945, 178, 111, "Output"]
+Cell[2739225, 47812, 84, 2, 48, "Input"],
+Cell[2739312, 47816, 6945, 178, 111, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2721801, 47325, 27, 0, 44, "Subsection"],
-Cell[2721831, 47327, 449, 13, 49, "Input"],
+Cell[2746306, 48000, 27, 0, 44, "Subsection"],
+Cell[2746336, 48002, 449, 13, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2722305, 47344, 84, 2, 48, "Input"],
-Cell[2722392, 47348, 7247, 186, 111, "Output"]
+Cell[2746810, 48019, 84, 2, 48, "Input"],
+Cell[2746897, 48023, 7247, 186, 111, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2729688, 47540, 27, 0, 44, "Subsection"],
-Cell[2729718, 47542, 182, 6, 49, "Input"],
+Cell[2754193, 48215, 27, 0, 44, "Subsection"],
+Cell[2754223, 48217, 182, 6, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2729925, 47552, 84, 2, 48, "Input"],
-Cell[2730012, 47556, 6745, 174, 109, "Output"]
+Cell[2754430, 48227, 84, 2, 48, "Input"],
+Cell[2754517, 48231, 6745, 174, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2736806, 47736, 26, 0, 44, "Subsection"],
-Cell[2736835, 47738, 256, 8, 49, "Input"],
+Cell[2761311, 48411, 25, 0, 44, "Subsection"],
+Cell[2761339, 48413, 231, 7, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2737116, 47750, 83, 2, 48, "Input"],
-Cell[2737202, 47754, 6745, 174, 109, "Output"]
+Cell[2761595, 48424, 82, 2, 48, "Input"],
+Cell[2761680, 48428, 6779, 180, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2743996, 47934, 26, 0, 44, "Subsection"],
-Cell[2744025, 47936, 100, 2, 36, "Text"],
-Cell[2744128, 47940, 65, 0, 34, "Text"],
-Cell[2744196, 47942, 534, 17, 70, "Input"],
-Cell[CellGroupData[{
-Cell[2744755, 47963, 169, 5, 49, "Input"],
-Cell[2744927, 47970, 6778, 175, 119, "Output"]
+Cell[2768508, 48614, 25, 0, 44, "Subsection"],
+Cell[2768536, 48616, 155, 4, 49, "Input"]
 }, Open  ]],
-Cell[2751720, 48148, 307, 10, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2752052, 48162, 201, 6, 49, "Input"],
-Cell[2752256, 48170, 7032, 183, 119, "Output"]
+Cell[2768728, 48625, 26, 0, 44, "Subsection"],
+Cell[2768757, 48627, 256, 8, 49, "Input"],
+Cell[CellGroupData[{
+Cell[2769038, 48639, 83, 2, 48, "Input"],
+Cell[2769124, 48643, 6745, 174, 109, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2759337, 48359, 26, 0, 44, "Subsection"],
-Cell[2759366, 48361, 127, 4, 49, "Input"],
+Cell[2775918, 48823, 26, 0, 44, "Subsection"],
+Cell[2775947, 48825, 114, 3, 36, "Text"],
+Cell[2776064, 48830, 65, 0, 34, "Text"],
+Cell[2776132, 48832, 534, 17, 70, "Input"],
 Cell[CellGroupData[{
-Cell[2759518, 48369, 100, 3, 48, "Input"],
-Cell[2759621, 48374, 2722, 76, 109, "Output"]
+Cell[2776691, 48853, 169, 5, 49, "Input"],
+Cell[2776863, 48860, 6778, 175, 119, "Output"]
 }, Open  ]],
-Cell[2762358, 48453, 2112, 66, 175, "Input"]
-}, Open  ]],
+Cell[2783656, 49038, 399, 13, 49, "Input"],
 Cell[CellGroupData[{
-Cell[2764507, 48524, 36, 0, 44, "Subsection"],
-Cell[2764546, 48526, 78, 2, 36, "Text"],
-Cell[2764627, 48530, 284, 9, 49, "Input"],
-Cell[CellGroupData[{
-Cell[2764936, 48543, 285, 10, 48, "Input"],
-Cell[2765224, 48555, 6349, 158, 109, "Output"]
+Cell[2784080, 49055, 201, 6, 49, "Input"],
+Cell[2784284, 49063, 6540, 175, 119, "Output"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2771610, 48718, 285, 10, 48, "Input"],
-Cell[2771898, 48730, 6349, 158, 109, "Output"]
+Cell[2790873, 49244, 40, 0, 44, "Subsection"],
+Cell[2790916, 49246, 83, 2, 36, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2778284, 48893, 183, 6, 48, "Input"],
-Cell[2778470, 48901, 2884, 80, 109, "Output"]
+Cell[2791036, 49253, 26, 0, 44, "Subsection"],
+Cell[2791065, 49255, 322, 10, 70, "Input"],
+Cell[CellGroupData[{
+Cell[2791412, 49269, 184, 6, 48, "Input"],
+Cell[2791599, 49277, 11477, 306, 109, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2781391, 48986, 101, 3, 48, "Input"],
-Cell[2781495, 48991, 3328, 88, 109, "Output"]
+Cell[2803113, 49588, 350, 12, 48, "Input"],
+Cell[2803466, 49602, 11477, 306, 109, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2784860, 49084, 128, 4, 48, "Input"],
-Cell[2784991, 49090, 2920, 76, 109, "Output"]
+Cell[2814980, 49913, 474, 16, 48, "Input"],
+Cell[2815457, 49931, 11585, 310, 109, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2827079, 50246, 1758, 58, 112, "Input"],
+Cell[2828840, 50306, 11477, 306, 109, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2840354, 50617, 724, 24, 70, "Input"],
+Cell[2841081, 50643, 16784, 434, 244, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2857902, 51082, 874, 28, 112, "Input"],
+Cell[2858779, 51112, 17273, 443, 207, "Output"]
+}, Open  ]],
+Cell[2876067, 51558, 330, 9, 70, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2876434, 51572, 36, 0, 44, "Subsection"],
+Cell[2876473, 51574, 78, 2, 36, "Text"],
+Cell[2876554, 51578, 284, 9, 49, "Input"],
+Cell[CellGroupData[{
+Cell[2876863, 51591, 285, 10, 48, "Input"],
+Cell[2877151, 51603, 6349, 158, 109, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2883537, 51766, 285, 10, 48, "Input"],
+Cell[2883825, 51778, 6349, 158, 109, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2890211, 51941, 183, 6, 48, "Input"],
+Cell[2890397, 51949, 2884, 80, 109, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2893318, 52034, 101, 3, 48, "Input"],
+Cell[2893422, 52039, 3328, 88, 109, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2896787, 52132, 128, 4, 48, "Input"],
+Cell[2896918, 52138, 2920, 76, 109, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -49480,4 +52556,4 @@ Cell[2784991, 49090, 2920, 76, 109, "Output"]
 
 (* End of internal cache information *)
 
-(* NotebookSignature Kv0besxAL8kaPAw1WQD4FAqr *)
+(* NotebookSignature exTCxMMJmVHzkC1cViY@b0@L *)
